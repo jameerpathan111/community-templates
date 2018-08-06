@@ -1,10 +1,13 @@
 <%#
-kind: ptable
 name: XenServer default
+snippet: false
 model: Ptable
-oses:
-- XenServer
--%>
+os_family: Xenserver
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%
   gueststorage = host_param('gueststorage') || 'yes'
   primary_disk = host_param('install-disk') || 'sda'

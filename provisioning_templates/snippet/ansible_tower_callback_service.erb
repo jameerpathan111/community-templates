@@ -1,9 +1,12 @@
 <%#
-kind: snippet
 name: ansible_tower_callback_service
-model: ProvisioningTemplate
 snippet: true
--%>
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 [Unit]
 Description=Provisioning callback to Ansible Tower
 Wants=network-online.target

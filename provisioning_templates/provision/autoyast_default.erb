@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <%#
-kind: provision
 name: AutoYaST default
+snippet: false
 model: ProvisioningTemplate
-oses:
-- OpenSUSE
--%>
+kind: provision
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
+
 <%
   # safemode renderer does not support unary negation
   pm_set = @host.puppetmaster.empty? ? false : true
@@ -176,8 +180,6 @@ cp /etc/resolv.conf /mnt/etc
 /bin/hostname <%= @host.name %>
 
 <%= snippet('remote_execution_ssh_keys') %>
-
-<%= snippet "blacklist_kernel_modules" %>
 
 <% if puppet_enabled -%>
 <%= snippet 'puppet_setup' %>

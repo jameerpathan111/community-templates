@@ -1,9 +1,12 @@
 <%#
 name: create_users
-model: ProvisioningTemplate
-kind: snippet
 snippet: true
--%>
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%- users = @host.owner_type == 'Usergroup' ? @host.owner.all_users : [@host.owner] -%>
 <%- users.each do |user| -%>
 <%=   "useradd #{user.login}" %>

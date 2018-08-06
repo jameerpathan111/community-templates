@@ -1,12 +1,15 @@
 <%#
-kind: PXELinux
 name: Kickstart default PXELinux
+snippet: false
 model: ProvisioningTemplate
+kind: PXELinux
 oses:
-- CentOS
-- Fedora
 - RedHat
--%>
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 # This file was deployed via '<%= template_name %>' template
 
 <%
@@ -58,17 +61,12 @@ oses:
   end
 
   ksoptions = options.join(' ')
-  timeout = host_param('loader_timeout').to_i * 10
-  timeout = 100 if timeout.nil? || timeout <= 0
 -%>
 
-DEFAULT menu
-MENU TITLE Booting into OS installer (ESC to stop)
-TIMEOUT <%= timeout %>
-ONTIMEOUT installer
+TIMEOUT <%= host_param('loader_timeout') || 10 %>
+DEFAULT <%= template_name %>
 
-LABEL installer
-  MENU LABEL <%= template_name %>
+LABEL <%= template_name %>
   KERNEL <%= @kernel %>
   APPEND initrd=<%= @initrd %> ks=<%= foreman_url('provision') %> <%= pxe_kernel_options %> <%= ksoptions %>
   IPAPPEND 2

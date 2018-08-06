@@ -1,12 +1,15 @@
 <%#
-kind: PXEGrub
 name: Kickstart default PXEGrub
+snippet: false
 model: ProvisioningTemplate
+kind: PXEGrub
 oses:
-- CentOS
-- Fedora
 - RedHat
--%>
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 # This file was deployed via '<%= template_name %>' template
 
 <%

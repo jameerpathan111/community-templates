@@ -1,8 +1,11 @@
 <%#
-kind: snippet
 name: puppet.conf
-model: ProvisioningTemplate
 snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 <%
   os_family = @host.operatingsystem.family

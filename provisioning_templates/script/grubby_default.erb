@@ -1,9 +1,15 @@
 #!/bin/bash
 <%#
-kind: script
 name: Grubby default
+snippet: false
 model: ProvisioningTemplate
+kind: script
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
+
 
 KERNEL="/boot/kernel"
 INITRD="/boot/initrd.img"

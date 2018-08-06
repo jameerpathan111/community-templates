@@ -1,10 +1,12 @@
 <%#
 name: kickstart_ifcfg_bond_interface
-model: ProvisioningTemplate
 snippet: true
 model: ProvisioningTemplate
-kind: snippet
--%>
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%= snippet('kickstart_ifcfg_generic_interface', :variables => {
                   :interface => @interface,
                   :subnet => @subnet,

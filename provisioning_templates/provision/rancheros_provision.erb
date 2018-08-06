@@ -1,8 +1,11 @@
 <%#
-kind: provision
 name: RancherOS provision
+snippet: false
 model: ProvisioningTemplate
-oses:
-- RancherOS
--%>
+kind: provision
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%= snippet 'rancheros_cloudconfig' -%>

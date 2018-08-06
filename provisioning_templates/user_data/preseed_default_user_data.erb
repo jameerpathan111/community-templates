@@ -1,11 +1,13 @@
 <%#
-kind: user_data
 name: Preseed default user data
+snippet: false
 model: ProvisioningTemplate
-oses:
-- Debian
-- Ubuntu
--%>
+kind: user_data
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 #!/bin/bash
 
 <%# Cloud instances frequently have incorrect hosts data %>
@@ -29,8 +31,6 @@ echo 'Acquire::http::Proxy "<%= proxy_uri %>";' >> /etc/apt/apt.conf
 <% end -%>
 
 <%= snippet('remote_execution_ssh_keys') %>
-
-<%= snippet "blacklist_kernel_modules" %>
 
 <% if chef_enabled %>
 <%= snippet 'chef_client' %>

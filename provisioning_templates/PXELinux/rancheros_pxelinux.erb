@@ -1,10 +1,13 @@
 <%#
-kind: PXELinux
 name: RancherOS PXELinux
+snippet: false
 model: ProvisioningTemplate
-oses:
-- RancherOS
--%>
+kind: PXELinux
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 DEFAULT rancheros
 
 LABEL rancheros

@@ -1,10 +1,12 @@
 <%#
-kind: ptable
 name: Preseed default
+snippet: false
 model: Ptable
-oses:
-- Debian
-- Ubuntu
+os_family: Debian
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 <%
   partitioning_method = host_param('partitioning-method') ? host_param('partitioning-method') : 'regular'

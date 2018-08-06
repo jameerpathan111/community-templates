@@ -1,9 +1,12 @@
 <%#
-kind: snippet
 name: ansible_tower_callback_script
-model: ProvisioningTemplate
 snippet: true
--%>
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 #!/bin/sh
 
 echo "Calling Ansible AWX/Tower provisioning callback..."

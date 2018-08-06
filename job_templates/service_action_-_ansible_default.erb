@@ -1,8 +1,9 @@
 <%#
 name: Service Action - Ansible Default
+snippet: false
+model: JobTemplate
 job_category: Ansible Services
 description_format: "%{state} service %{name}"
-snippet: false
 template_inputs:
 - name: state
   required: true
@@ -45,7 +46,6 @@ template_inputs:
   advanced: true
 provider_type: Ansible
 kind: job_template
-model: JobTemplate
 %>
 
 # For Windows targets, we should use win_service

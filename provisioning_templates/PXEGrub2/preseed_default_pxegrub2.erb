@@ -1,10 +1,12 @@
 <%#
-kind: PXEGrub2
 name: Preseed default PXEGrub2
+snippet: false
 model: ProvisioningTemplate
-oses:
-- Debian
-- Ubuntu
+kind: PXEGrub2
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 #
 # This file was deployed via '<%= template_name %>' template
@@ -32,10 +34,6 @@ oses:
     options << 'console-setup/ask_detect=false console-setup/layout=USA console-setup/variant=USA keyboard-configuration/layoutcode=us localechooser/translation/warn-light=true localechooser/translation/warn-severe=true'
   end
   options << "locale=#{host_param('lang') || 'en_US'}"
-  
-  # send PXELinux "IPAPPEND 2" option along
-  options.push("BOOTIF=01-$net_default_mac")
-
   options = options.join(' ')
 
   if (os_name == 'Ubuntu' && os_major > 12) || (os_name == 'Debian' && os_major > 8)

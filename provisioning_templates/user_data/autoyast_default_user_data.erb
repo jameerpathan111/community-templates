@@ -1,11 +1,13 @@
 <%#
-kind: user_data
 name: AutoYaST default user data
+snippet: false
 model: ProvisioningTemplate
-oses:
-- OpenSUSE
-- SLES
--%>
+kind: user_data
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%
   # safemode renderer does not support unary negation
   pm_set = @host.puppetmaster.empty? ? false : true
@@ -23,8 +25,6 @@ echo 'root:<%= root_pass -%>' | /usr/sbin/chpasswd -e
 <% end -%>
 
 <%= snippet('remote_execution_ssh_keys') %>
-
-<%= snippet "blacklist_kernel_modules" %>
 
 <% if puppet_enabled %>
 <% if host_param_true?('enable-puppetlabs-pc1-repo') -%>

@@ -1,9 +1,12 @@
 <%#
-kind: PXELinux
 name: XenServer default PXELinux
+snippet: false
 model: ProvisioningTemplate
-oses:
-- XenServer
+kind: PXELinux
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 default xenserver
 label xenserver

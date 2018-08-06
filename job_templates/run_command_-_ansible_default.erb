@@ -1,8 +1,9 @@
 <%#
 name: Run Command - Ansible Default
+snippet: false
+model: JobTemplate
 job_category: Ansible Commands
 description_format: Run %{command}
-snippet: false
 template_inputs:
 - name: command
   required: true
@@ -11,7 +12,6 @@ template_inputs:
   advanced: false
 provider_type: Ansible
 kind: job_template
-model: JobTemplate
 %>
 
 ---

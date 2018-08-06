@@ -1,10 +1,14 @@
 <%#
-kind: finish
 name: Kickstart default finish
+snippet: false
 model: ProvisioningTemplate
+kind: finish
 oses:
-- CentOS
-- Fedora
+- RedHat
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
   <%#
   This template accepts the following parameters:
@@ -64,8 +68,6 @@ fi
 <% end -%>
 
 <%= snippet('remote_execution_ssh_keys') %>
-
-<%= snippet "blacklist_kernel_modules" %>
 
 <% if chef_enabled %>
 <%= snippet 'chef_client' %>

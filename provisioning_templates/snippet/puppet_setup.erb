@@ -1,9 +1,11 @@
 <%#
-kind: snippet
 name: puppet_setup
-model: ProvisioningTemplate
-description: this snippet will configure the Puppet agent
 snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 <%
 os_family = @host.operatingsystem.family

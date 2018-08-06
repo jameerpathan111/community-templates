@@ -1,11 +1,15 @@
 #cloud-config
 <%#
-kind: provision
 name: CoreOS provision
+snippet: false
 model: ProvisioningTemplate
-oses:
-- CoreOS
+kind: provision
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
+
 <%
 os_major  = @host.operatingsystem.major.to_i
 %>

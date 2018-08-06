@@ -1,9 +1,12 @@
 <%#
-kind: snippet
 name: pxegrub_discovery
-model: ProvisioningTemplate
 snippet: true
--%>
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%#
 RHEL 7 virtio driver does not have persistent naming scheme, causing interfaces
 to be named eth0, eth1, etc.. If you want to enable the new persistent naming

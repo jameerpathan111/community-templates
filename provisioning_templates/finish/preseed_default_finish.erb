@@ -1,10 +1,12 @@
 <%#
-kind: finish
 name: Preseed default finish
+snippet: false
 model: ProvisioningTemplate
-oses:
-- Debian
-- Ubuntu
+kind: finish
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 <%
   # safemode renderer does not support unary negation
@@ -34,8 +36,6 @@ oses:
 <% end -%>
 
 <%= snippet('remote_execution_ssh_keys') %>
-
-<%= snippet "blacklist_kernel_modules" %>
 
 <% if chef_enabled %>
 <%= snippet 'chef_client' %>

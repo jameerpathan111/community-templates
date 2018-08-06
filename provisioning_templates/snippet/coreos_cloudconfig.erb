@@ -1,10 +1,14 @@
 #cloud-config
 <%#
-kind: snippet
 name: coreos_cloudconfig
-model: ProvisioningTemplate
 snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
+
 <%
   units = 0
   unless host_param_false?('enable_etcd')

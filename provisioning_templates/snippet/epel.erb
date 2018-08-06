@@ -1,9 +1,12 @@
 <%#
-kind: snippet
 name: epel
-model: ProvisioningTemplate
 snippet: true
--%>
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%
 repo_base  = host_param('epel-repo-base') ? host_param('epel-repo-base') : 'https://dl.fedoraproject.org/pub/epel'
 http_proxy = host_param('http-proxy') ? " --httpproxy #{host_param('http-proxy')}" : nil

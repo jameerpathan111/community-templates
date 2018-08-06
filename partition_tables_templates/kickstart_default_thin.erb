@@ -1,13 +1,12 @@
 <%#
-kind: ptable
 name: Kickstart default thin
+snippet: false
 model: Ptable
-oses:
-- CentOS
-- Fedora
-- RedHat
-- oVirt
-- RHVH
+os_family: Redhat
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 zerombr
 clearpart --all --initlabel

@@ -1,9 +1,12 @@
 <%#
-kind: snippet
 name: rancheros_cloudconfig
-model: ProvisioningTemplate
 snippet: true
--%>
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 #cloud-config
 hostname: <%= @host.shortname %>
 rancher:

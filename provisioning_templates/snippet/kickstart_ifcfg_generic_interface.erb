@@ -1,10 +1,12 @@
 <%#
 name: kickstart_ifcfg_generic_interface
-model: ProvisioningTemplate
 snippet: true
 model: ProvisioningTemplate
-kind: snippet
--%>
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 BOOTPROTO="<%= @dhcp ? 'dhcp' : 'none' -%>"
 <%- unless @dhcp || @subnet.nil? -%>
 <%-   if @interface.ip.present? -%>

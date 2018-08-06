@@ -1,10 +1,12 @@
 <%#
 name: kickstart_ifcfg_get_identifier_names
-model: ProvisioningTemplate
 snippet: true
 model: ProvisioningTemplate
-kind: snippet
--%>
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%- if @identifier -%>
 <%=   "real=\"#{@identifier}\"" %>
 <%- else -%>

@@ -1,8 +1,11 @@
 <%#
-kind: snippet
 name: saltstack_minion
-model: ProvisioningTemplate
 snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 master: <%= host_param('salt_master') %>
 log_level: warning

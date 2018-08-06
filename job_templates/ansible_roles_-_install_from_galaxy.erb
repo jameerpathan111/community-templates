@@ -1,8 +1,9 @@
 <%#
 name: Ansible Roles - Install from Galaxy
+snippet: false
+model: JobTemplate
 job_category: Ansible Galaxy
 description_format: Install roles '%{ansible_roles_list}' from Galaxy
-snippet: false
 template_inputs:
 - name: ansible_roles_list
   required: true
@@ -19,7 +20,6 @@ template_inputs:
   advanced: true
 provider_type: Ansible
 kind: job_template
-model: JobTemplate
 %>
 
 ---

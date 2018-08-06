@@ -1,11 +1,15 @@
 <%#
-kind: user_data
 name: Kickstart default user data
+snippet: false
 model: ProvisioningTemplate
+kind: user_data
 oses:
-- CentOS
-- Fedora
--%>
+- RedHat
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <%
   rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
   # safemode renderer does not support unary negation
@@ -56,8 +60,6 @@ fi
 <% end -%>
 
 <%= snippet('remote_execution_ssh_keys') %>
-
-<%= snippet "blacklist_kernel_modules" %>
 
 <% if chef_enabled %>
 <%= snippet 'chef_client' %>

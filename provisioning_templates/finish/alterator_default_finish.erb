@@ -1,11 +1,13 @@
 <%#
-kind: finish
 name: Alterator default finish
+snippet: false
 model: ProvisioningTemplate
-oses:
-- ALTLinux p6
-- ALTLinux p7
--%>
+kind: finish
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 #!/bin/sh
 
 <%= snippet 'fix_hosts' %>

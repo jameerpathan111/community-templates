@@ -1,12 +1,14 @@
 <%#
-kind: ptable
 name: Kickstart default
+snippet: false
 model: Ptable
-oses:
-- CentOS
-- Fedora
-- RedHat
+os_family: Redhat
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 zerombr
 clearpart --all --initlabel
 autopart <%= host_param('autopart_options') %>
+#this is jp

@@ -1,11 +1,13 @@
 <%#
-kind: provision
 name: Alterator default
+snippet: false
 model: ProvisioningTemplate
-oses:
-- ALTLinux p6
-- ALTLinux p7
--%>
+kind: provision
+organizations:
+- Default Organization
+locations:
+- Default Location
+%>
 <% if @metadata.to_s == '/vm-profile.scm' -%>
 <%= @host.diskLayout %>
 <% elsif @metadata.to_s == '/pkg-groups.tar' -%>

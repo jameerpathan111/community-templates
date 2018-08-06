@@ -1,23 +1,26 @@
 <%#
-kind: job_template
 name: Power Action - SSH Default
+snippet: false
 model: JobTemplate
 job_category: Power
-description_format: '%{action} host'
-provider_type: SSH
+description_format: "%{action} host"
 template_inputs:
 - name: action
-  description: Action to perform on the service
-  input_type: user
-  options: "restart\nshutdown"
   required: true
+  input_type: user
+  description: Action to perform on the service
+  options: |-
+    restart
+    shutdown
+  advanced: false
+provider_type: SSH
+kind: job_template
 %>
 
 echo <%= input('action') %> host && sleep 3
 <%= case input('action')
       when 'restart'
-        'shutdown -r +1'
+        'reboot'
       else
         'shutdown -h now'
       end %>
-

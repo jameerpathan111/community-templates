@@ -1,10 +1,12 @@
 <%#
-kind: PXELinux
 name: Preseed default PXELinux
+snippet: false
 model: ProvisioningTemplate
-oses:
-- Debian
-- Ubuntu
+kind: PXELinux
+organizations:
+- Default Organization
+locations:
+- Default Location
 %>
 #
 # This file was deployed via '<%= template_name %>' template
