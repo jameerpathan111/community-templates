@@ -1,0 +1,28 @@
+<%#
+kind: job_template
+name: Package Action - SSH Default
+model: JobTemplate
+job_category: Packages
+organizations:
+- Test
+locations:
+- Redhat
+description_format: "%{action} package(s) %{package}"
+provider_type: SSH
+%>
+
+<%
+  supported_families = ['Redhat', 'Debian', 'Suse']
+  render_error(N_('Unsupported or no operating system found for this host.')) unless @host.operatingsystem && supported_families.include?(@host.operatingsystem.family)
+-%>
+#!/bin/bash
+
+# Helper function that exits with a particular message and code.
+#
+# Usage:
+#   exit_with_message "Could not do a thing" 2
+#
+function exit_with_message {
+  echo "${1}, exiting..."
+  exit $2
+}
